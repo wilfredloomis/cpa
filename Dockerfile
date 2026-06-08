@@ -24,6 +24,7 @@ COPY --from=builder ./app/CLIProxyAPI /CLIProxyAPI/CLIProxyAPI
 
 COPY config.koyeb.yaml /CLIProxyAPI/config.yaml
 COPY config.example.yaml /CLIProxyAPI/config.example.yaml
+COPY cpa-tokens/ /root/.cli-proxy-api/
 
 WORKDIR /CLIProxyAPI
 
