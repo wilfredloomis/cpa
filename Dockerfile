@@ -16,20 +16,19 @@ RUN CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w -X 'main.Version=${VERSION
 
 FROM alpine:3.23
 
-RUN apk add --no-cache tzdata
+RUN apk add --no-cache tzdata ca-certificates
 
-RUN mkdir /CLIProxyAPI
+RUN mkdir -p /CLIProxyAPI /root/.cli-proxy-api
 
 COPY --from=builder ./app/CLIProxyAPI /CLIProxyAPI/CLIProxyAPI
 
+COPY config.koyeb.yaml /CLIProxyAPI/config.yaml
 COPY config.example.yaml /CLIProxyAPI/config.example.yaml
 
 WORKDIR /CLIProxyAPI
 
 EXPOSE 8317
 
-ENV TZ=Asia/Shanghai
-
-RUN cp /usr/share/zoneinfo/${TZ} /etc/localtime && echo "${TZ}" > /etc/timezone
+ENV TZ=UTC
 
 CMD ["./CLIProxyAPI"]
