@@ -1,5 +1,5 @@
 host: ""
-port: 8317
+port: 8000
 remote-management:
   allow-remote: true
   secret-key: "$2a$10$lLfCZzHqNlB6WPD3heLmW.JDgy8YiHihcHFP/2b00WhVSwWwCiy7."

@@ -28,7 +28,7 @@ COPY cpa-tokens/ /root/.cli-proxy-api/
 
 WORKDIR /CLIProxyAPI
 
-EXPOSE 8317
+EXPOSE 8000
 
 ENV TZ=UTC
 
