@@ -1,0 +1,15 @@
+host: ""
+port: 8317
+remote-management:
+  allow-remote: true
+  secret-key: "$2a$10$lLfCZzHqNlB6WPD3heLmW.JDgy8YiHihcHFP/2b00WhVSwWwCiy7."
+auth-dir: "/root/.cli-proxy-api"
+api-keys:
+  - "sk-koyeb-cpa-key"
+debug: false
+usage-statistics-enabled: true
+redis-usage-queue-retention-seconds: 60
+request-retry: 3
+max-retry-credentials: 10
+routing:
+  strategy: "round-robin"
